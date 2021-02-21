@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void funcMaiorMenor(float num1, float num2){
     if (num1>num2){
         printf("\nO numero %.2f e maior que %.2f", num1, num2);  
