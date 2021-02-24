@@ -7,7 +7,7 @@ float funcConversao (float temperaturaCelsius){
 
 int main(int argc, char **argv){
     float temperaturaCelsius, resultado;
-        printf("\nInsira uma temperatura e o sistema ira converter para Fahrenheit: ");
+        printf("\nInsira uma temperatura em Celsius e o sistema ira converter para Fahrenheit: ");
         scanf("%f", &temperaturaCelsius);
             resultado = funcConversao(temperaturaCelsius);
             printf("\nA temperatura em Celsius e %.2f e em Fahrenheit e: %.2f", temperaturaCelsius, resultado);
