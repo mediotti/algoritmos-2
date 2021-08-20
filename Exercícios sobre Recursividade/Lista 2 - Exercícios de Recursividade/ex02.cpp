@@ -1,27 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <iostream>
+#include <new>
+using namespace std;
 //2-Faça um programa que peça 4 valores, coloque estes valores em um  vetor global e, calcule a soma de todos os valores. Por fim, faça o cálculo da média. 
 //Detalhe: crie um vetor já com os valores definidos para se concentrar no mais importante que é a soma.
 
-int funcSomar(int n){
-    if (n == 1 || n == 0){
-        printf(" %d ", n);
-        return n;
-    }else{
-        printf(" %d +", n);
-        int res = funcSomar(n-1);
-        return res + n;
-    }
+float * vetor;
 
+void funcMedia(float soma, int n){
+    float media;
+    media = soma / n;
+    printf("\n\nO resultado da media e: %.2f", media);
+    
+}
+
+float funcSomar(float vetor[], int n){
+    if (n == 0){
+        printf(" %f ", vetor[n]);
+        return vetor[n-1];
+    }else{
+        printf(" %f +", vetor[n] );
+        return vetor[n-1] + funcSomar(vetor, n-1);
+    }
 }
 
 int main (int argc, char **argv){ 
-    float v[4] = {3, 5, 9.2, 10};
+    int tam, n;
     
-    n = funcSomar(v);
+    printf("Quantos numeros deseja adicionar no vetor?: ");
+    scanf("%d", &tam);
+    vetor = new float [tam];
 
-    printf("\n\nO resultado e: %d", n);
+    for (n=0; n<tam; n++){
+      cout << "Insira um numero ";
+      cin >> vetor[n];
+    }
+    
+    float soma = funcSomar(vetor, n);
+    printf("\n\nO resultado da soma e: %.2f", soma);
+
+    funcMedia(soma, n);
 
     return 0;
 }
