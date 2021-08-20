@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//1-	Faça um programa que peça um número e retorne a somatória deste número.
+//Calcular o fatorial do numero inserido.
 
 int funcSomar(int n){
     if (n == 1 || n == 0){
         printf(" %d ", n);
-        return n;
+        return 1;
     }else{
-        printf(" %d +", n);
-        return funcSomar(n-1) + n;
+        printf(" %d x", n);
+        int res = funcSomar(n-1);
+        return res * n;
     }
 
 }
