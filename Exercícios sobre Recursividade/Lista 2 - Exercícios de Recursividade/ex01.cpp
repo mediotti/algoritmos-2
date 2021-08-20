@@ -11,7 +11,6 @@ int funcSomar(int n){
         printf(" %d +", n);
         return funcSomar(n-1) + n;
     }
-
 }
 
 int main (int argc, char **argv){ 
