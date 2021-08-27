@@ -9,6 +9,15 @@ using namespace std;
 
 float * vetor;
 
+void preencherVetor(int tam, int n){
+    if(n<tam){
+        cout << "Insira um numero ";
+        cin >> vetor[n];
+        n=n+1;
+        preencherVetor(tam, n);
+    }
+}
+
 float funcMenor(float vetor[], int tam, int indice_menor ){
     if(tam == 0){
         return vetor[indice_menor];
@@ -28,11 +37,7 @@ int main (int argc, char **argv){
     vetor = new float [tam];
 
     //Preenchimento do vetor
-    for (n=0; n<tam; n++){
-      cout << "Insira um numero ";
-      cin >> vetor[n];
-    }
-    
+    preencherVetor(tam, 0);    
     
     printf("\n\nO menor numero e: %.2f", funcMenor(vetor, tam, 0));
 

@@ -9,14 +9,23 @@ using namespace std;
 
 float * vetor;
 
-float funcMaior(float vetor[], int tam, int indice_maior ){
+void preencherVetor(int tam, int n){
+    if(n<tam){
+        cout << "Insira um numero ";
+        cin >> vetor[n];
+        n=n+1;
+        preencherVetor(tam, n);
+    }
+}
+
+float funcMaior(int tam, int indice_maior ){
     if(tam == 0){
         return vetor[indice_maior];
     } else{
         if(vetor[tam-1] > vetor[indice_maior]){
-            return funcMaior(vetor, tam-1, tam-1);
+            return funcMaior(tam-1, tam-1);
         }else
-            return funcMaior(vetor, tam-1, indice_maior);
+            return funcMaior(tam-1, indice_maior);
     }
 }
 
@@ -28,12 +37,9 @@ int main (int argc, char **argv){
     vetor = new float [tam];
 
     //Preenchimento do vetor
-    for (n=0; n<tam; n++){
-      cout << "Insira um numero ";
-      cin >> vetor[n];
-    }
-    
-    printf("\n\nO maior numero e: %.2f", funcMaior(vetor, tam, 0));
+    preencherVetor(tam, 0);
+        
+    printf("\n\nO maior numero e: %.2f", funcMaior(tam, 0));
 
     return 0;
 }
