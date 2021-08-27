@@ -17,6 +17,7 @@ float FuncSomar(int n){
         return FuncSomar(n-1) + vetor[n];
     }
 
+
 }
 
 /*float funcSomar(float vetor[], int n){
