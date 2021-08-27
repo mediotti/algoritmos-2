@@ -18,14 +18,14 @@ void preencherVetor(int tam, int n){
     }
 }
 
-float funcMenor(float vetor[], int tam, int indice_menor ){
+float funcMenor(int tam, int indice_menor ){
     if(tam == 0){
         return vetor[indice_menor];
     } else{
         if(vetor[tam-1] < vetor[indice_menor]){
-            return funcMenor(vetor, tam-1, tam-1);
+            return funcMenor(tam-1, tam-1);
         }else
-            return funcMenor(vetor, tam-1, indice_menor);
+            return funcMenor(tam-1, indice_menor);
     }
 }
 
@@ -39,7 +39,7 @@ int main (int argc, char **argv){
     //Preenchimento do vetor
     preencherVetor(tam, 0);    
     
-    printf("\n\nO menor numero e: %.2f", funcMenor(vetor, tam, 0));
+    printf("\n\nO menor numero e: %.2f", funcMenor(tam, 0));
 
     return 0;
 }
